@@ -1,0 +1,37 @@
+{
+  "name": "NightWatchFrameWorkPOM",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "first": "nightwatch --config nightwatch.conf.BASIC.js",
+    "local": "nightwatch --env local",
+    "ie": "nightwatch -e ie11",
+    "sauce": "nightwatch -e chrome,ie11,android_s4_emulator,iphone_6_simulator",
+    "upload": "node test/e2e/upload_screenshots_to_s3.js",
+    "e2e": "npm run sauce; npm run upload",
+    "dev": "nodemon -w test/index.html --delay 250ms --exec 'npm run upload'"
+  },
+  "author": "Harsha Channappa",
+  "license": "ISC",
+  "devDependencies": {
+    "chromedriver": "^80.0.1",
+    "env2": "^2.1.1",
+    "ffmpeg": "0.0.4",
+    "mime-types": "^2.1.13",
+    "nightwatch": "^1.2.4",
+    "nightwatch-html-reporter": "^2.0.4",
+    "nightwatch-video-recorder": "^1.1.0",
+    "phantomjs": "^2.1.7",
+    "selenium-server": "^3.141.59",
+    "winston": "^2.3.1"
+  },
+  "keywords": [
+    "nightwatch",
+    "testing",
+    "front-end",
+    "UI",
+    "browser"
+  ]
+}
